@@ -71,10 +71,10 @@ export default function Login() {
         borderRadius={10}
       >
         <form onSubmit={handleSubmit}>
-          <Input placeholder="Enter your email" size="lg" mb={5} value={email} onChange={(e)=>{
+          <Input placeholder="Enter your email" type="email" size="lg" mb={5} value={email} onChange={(e)=>{
             setEmail(e.target.value)
           }} />
-          <Input placeholder="Enter your email" size="lg" mb={5} value={password} onChange={(e)=>{
+          <Input placeholder="Enter your password" type="password"  size="lg" mb={5} value={password} onChange={(e)=>{
             setPassword(e.target.value)
           }} />
           <Button colorScheme="green" size="lg" p={"15px 243px"} type="submit">
