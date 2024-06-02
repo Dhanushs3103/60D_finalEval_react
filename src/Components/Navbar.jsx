@@ -8,7 +8,7 @@ import { useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function Navbar() {
-  let {email,isLogin} = useContext(AuthContext)
+  let {email,isLogin,logout} = useContext(AuthContext)
   let navigate = useNavigate()
   return (
     <>
@@ -19,6 +19,7 @@ export default function Navbar() {
         <Spacer/>
         {
           isLogin ? (<Button  variant="solid" colorScheme='red' onClick={()=>{
+            logout()
            navigate(`/login`)
           }}>Logout</Button>) :(<Button  variant="solid" colorScheme='green' onClick={()=>{
             navigate(`/login`)
