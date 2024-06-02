@@ -7,6 +7,7 @@ import { Container, Flex, Select } from "@chakra-ui/react";
 //local imports
 import ProductCard from "../Components/ProductCard";
 import ProductLoadingIndicator from "../Components/ProductLoadingIndicator";
+import  ErrorIndicator from "../Components/ErrorIndicator"
 
 //API_URL
 let API_URL = `https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-products`;
@@ -56,6 +57,14 @@ export default function Home() {
   useEffect(() => {
     getData(sortedValue,filterValue);
   }, [sortedValue,filterValue]); //invocking the useEffect to handle side effect in the component.
+
+  if(loading) {
+    return <ProductLoadingIndicator/>
+  }
+
+  if(error) {
+    return <ErrorIndicator/>
+  }
 
   return (
     <>
