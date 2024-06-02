@@ -12,6 +12,7 @@ export default function AuthContextProvider({children}) {
     }
     function logout () {
         setIsLogin(false)
+        setEmail("");
     }
 
     let authvalues ={
